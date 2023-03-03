@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Study_Buddy.Models.Booking>
+
+@{
+    ViewBag.Title = "BookingIndex";
+}
+
+<h2>BookingIndex</h2>
+<link href="~/Content/Style.css" rel="stylesheet" />
+<center class="centralContent">
+    <table class="fulltable">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tutor_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stud_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tutor_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book_time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Module)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student_status)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tutor_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stud_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tutor_email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book_time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Module)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student_status)
+                </td>
+                <td>
+                        @*@Html.ActionLink("Edit", "Edit", new { id=item.Booking_Id }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.Booking_Id }) |*@
+                        @Html.ActionLink("Delete", "DeleteBooking", new { id=item.Booking_Id })
+                    </td>
+            </tr>
+        }
+
+    </table>
+</center>
+<div style="padding-bottom:300px;">
+
+</div>

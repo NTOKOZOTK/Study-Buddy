@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "identityapp1": {
+      "ignored": "true",
+      "suggestion": "true",
+      "type": "identityapp",
+      "connectionId": ""
+    },
+    "mssql1": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/study14/databases/Study Buddy_DB",
+      "type": "mssql.azure",
+      "connectionId": "DefaultConnection"
+    }
+  }
+}

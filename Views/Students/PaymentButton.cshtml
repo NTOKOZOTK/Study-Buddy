@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "PaymentButton";
+}
+
+
+<center class="centralContent">
+    <div style="background-repeat: no-repeat;
+       background-image: url('/images/istockphoto-1292713874-170667a.jpg');
+       background-size: 100% 650px;
+       padding-top: 0em; height: 500px;">
+        <br /><br /> <br />
+        <h1 align="left" style="color:white;">Welcome ! To Your Tutorial Panel</h1>
+        <form action="https://www.payfast.co.za/eng/process" name="form_83a4428d123ea3850979b48cba63f681" onsubmit="return click_83a4428d123ea3850979b48cba63f681( this );" method="post">
+            <input type="hidden" name="cmd" value="_paynow">
+            <input type="hidden" name="receiver" value="17836350">
+            <input type="hidden" name="item_name" value="Tutorial_Fee">
+            <input type="hidden" name="amount" value="05.00">
+            <input type="hidden" name="item_description" value="">
+
+            <table style="padding-top:0em;">
+                <tr>
+                    <td colspan=2 align=center>
+                        <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=17836350&amp;item_name=Tutorial_Fee&amp;amount=05.00&amp;return_url=https%3A%2F%2F2021grp14.azurewebsites.net%2Flanding%2FTeamWelcome&amp;cancel_url=https%3A%2F%2F2021grp14.azurewebsites.net%2FSetTeams">
+                            <img src="https://www.payfast.co.za/images/buttons/light-small-paynow.png" width="165" height="36" alt="Pay" title="Pay Now with PayFast" style="background-color:white" />
+                        </a>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+</center>
+
+

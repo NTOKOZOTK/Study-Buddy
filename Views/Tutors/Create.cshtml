@@ -1,0 +1,144 @@
+﻿@model Study_Buddy.Models.Tutor
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<center class="centralContent">
+
+    <h4> Become A Tutor</h4>
+
+    @using (Html.BeginForm("Create", "Tutors", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <p>@ViewBag.Message</p>
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Tutor_Name, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.Tutor_Name, new { htmlAttributes = new { @class = "form-control textbox" } })
+                    @Html.ValidationMessageFor(model => model.Tutor_Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control textbox" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    @Html.LabelFor(model => model.Module, htmlAttributes: new { @class = "control-label" })
+                    <div>
+                        @Html.DropDownListFor(model => model.Module, new List<SelectListItem>
+                    {
+                        new SelectListItem(){Text="Select Your Module",Disabled= true,Selected=true},
+                       new SelectListItem(){Text="Applications Development"},
+                         new SelectListItem(){Text="Information Systems  " },
+                         }, new { @style = "width:500px;height:30px;" })
+                    </div>
+                    <br />
+                    @Html.ValidationMessageFor(model => model.Module, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Binary, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    <input type="file" name="file" id="file" />
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div>
+                    @Html.LabelFor(model => model.Department, htmlAttributes: new { @class = "control-label" })
+                    <div>
+                        @Html.DropDownListFor(model => model.Department, new List<SelectListItem>
+                    {
+                        new SelectListItem(){Text="Select Your Faculty",Disabled= true,Selected=true},
+                       new SelectListItem(){Text="Information Technology"},
+                         new SelectListItem(){Text="Information Systems " },
+                         }, new { @style = "width:500px;height:30px;" })
+                    </div>
+                    <br />
+                </div>
+                @Html.ValidationMessageFor(model => model.Department, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Level_Of_Study, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.DropDownListFor(model => model.Level_Of_Study, new List<SelectListItem>
+                {
+                    new SelectListItem(){Text="Year of Study ",Disabled= true,Selected=true},
+                     new SelectListItem(){Text="Second Year " },
+                     new SelectListItem(){Text="Third Year " },
+                     new SelectListItem(){Text="Forth Year "}
+
+
+                     }, new { @style = "width:500px;height:30px;" })
+                </div>
+                <br />
+                @Html.ValidationMessageFor(model => model.Level_Of_Study, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.HiddenFor(model => model.Status, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.HiddenFor(model => model.Status, new { htmlAttributes = new { @class = "form-control textbox" } })
+                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    @Html.LabelFor(model => model.Faculty, htmlAttributes: new { @class = "control-label" })
+                    <div>
+                        @Html.DropDownListFor(model => model.Faculty, new List<SelectListItem>
+                    {
+                        new SelectListItem(){Text="Select Your Faculty",Disabled= true,Selected=true},
+                       new SelectListItem(){Text="Accounting and Informatics"},
+                         new SelectListItem(){Text=" " },
+                         }, new { @style = "width:500px;height:30px;" })
+                    </div>
+                    <br />
+                </div>
+                @Html.ValidationMessageFor(model => model.Faculty, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Level_2_tut, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.DropDownListFor(model => model.Level_2_tut, new List<SelectListItem>
+                {
+                    new SelectListItem(){Text="Level of Study To Tutor ",Disabled= true,Selected=true},
+                   new SelectListItem(){Text="First Year "}
+                     
+
+
+                     }, new { @style = "width:500px;height:30px;" })
+                </div>
+                <br />
+                @Html.ValidationMessageFor(model => model.Level_2_tut, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.HiddenFor(model => model.Availability, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.HiddenFor(model => model.Availability, new { htmlAttributes = new { @class = "form-control textbox" } })
+                    @Html.ValidationMessageFor(model => model.Availability, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <input type="submit" value="Become A Tutor" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+            
+    }
+
+    
+
+</center>

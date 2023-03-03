@@ -1,0 +1,80 @@
+﻿@model Study_Buddy.Models.Directions
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<center class="centralContent">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Directions</h4>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+            <div>
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control textbox" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.StudNumber, htmlAttributes: new { @class = "control-label" })
+            <div>
+                @Html.EditorFor(model => model.StudNumber, new { htmlAttributes = new { @class = "form-control textbox" } })
+                @Html.ValidationMessageFor(model => model.StudNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+            <div>
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control textbox" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label" })
+            <div>
+                @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control textbox" } })
+                @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label" })
+            <div>
+                @*<input id="locationName" placeholder="Address" name="Location" type="text" style="width:500px;height:40px;text-align:center;">*@
+                <input id="pickup" placeholder="Enter your address" onFocus="geolocate()" type="text" name="Location" style="width:500px;height:40px;text-align:center;">
+                @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+            </div>
+        </div> <br />
+        <div class="form-group">
+            <div>
+                @Html.LabelFor(model => model.MeetingPoint, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.DropDownListFor(model => model.MeetingPoint, new List<SelectListItem>
+                {
+                    new SelectListItem(){Text="Meeting Point ",Disabled= true,Selected=true},
+                     new SelectListItem(){Text="Physical Contact  " },
+                     }, new { @style = "width:500px;height:30px;" })
+                </div>
+                <br />
+                @Html.ValidationMessageFor(model => model.MeetingPoint, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div>
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    }
+
+</center>

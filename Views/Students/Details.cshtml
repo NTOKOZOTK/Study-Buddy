@@ -1,0 +1,114 @@
+﻿@model Study_Buddy.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Stud_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stud_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stud_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stud_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Study_Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Study_Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Study_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Study_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pur_booking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pur_booking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Level_Of_Study)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Level_Of_Study)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Meeting_Place)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Meeting_Place)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Module)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Module)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Faculty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Faculty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Stud_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

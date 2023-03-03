@@ -1,0 +1,256 @@
+﻿/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+.max-width {
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+/* navbar styling */
+.navbar {
+    position: fixed;
+    width: 98.1%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+    /* sticky end*/
+    .navbar .max-width {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar .logo a {
+        color: #ddd;
+        font-size: 35px;
+        font-weight: 600;
+    }
+
+    .navbar .menu li {
+        list-style: none;
+        display: inline-block;
+    }
+
+        .navbar .menu li a {
+            display: block;
+            color: #242d3c;
+            font-size: 18px;
+            font-weight: 500;
+            margin-left: 25px;
+            transition: color 0.3s ease;
+        }
+
+            .navbar .menu li a:hover {
+                color: #7678FB;
+            }
+
+    .navbar.sticky .menu li a:hover {
+        color: #ddd;
+    }
+
+/* menu btn styling */
+.menu-btn {
+    color: #ddd;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+.h1home {
+    color: #242d3c;
+}
+
+.h3home {
+    color: #000000;
+}
+
+.h1HomeSpan {
+    color: #F76500;
+}
+
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 5px;
+    margin: 0.0001%;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+    align ="center"
+}
+
+ul.no-bullets {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    background-color: #242d3c;
+    width: 40%;
+}
+
+    .btn:hover {
+        color: #242d3c;
+        background-color: #ddd;
+    }
+
+
+.home {
+    display: flex;
+    background: url('../images/back.jpg') no-repeat center;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.centralContent {
+    margin-top: 10%;
+   
+   
+}
+
+.textbox{
+    width:30%;
+}
+/* footer section styling */
+footer {
+    background: #242d3c;
+    padding: 15px 23px;
+    color: #ddd;
+    text-align: center;
+}
+
+    footer span a {
+        color: #7678FB;
+        text-decoration: none;
+    }
+
+        footer span a:hover {
+            text-decoration: underline;
+        }
+
+
+/* responsive media query start */
+
+@media (max-width: 991px) {
+    .max-width {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 947px) {
+    .menu-btn {
+        display: block;
+        z-index: 999;
+    }
+
+        .menu-btn i.active:before {
+            content: "\f00d";
+        }
+
+    .navbar {
+        margin-left: -3%;
+    }
+
+        .navbar .menu {
+            position: fixed;
+            height: 100vh;
+            width: 100%;
+            left: -100%;
+            top: 0;
+            background: #242d3c;
+            text-align: center;
+            padding-top: 80px;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+            .navbar .menu.active {
+                left: 0;
+            }
+
+            .navbar .menu li {
+                display: block;
+                color: white;
+            }
+
+                .navbar .menu li a {
+                    display: inline-block;
+                    margin: 20px 0;
+                    font-size: 25px;
+                    color: white;
+                }
+
+    .column {
+        float: left;
+        width: 100%;
+        padding: 5px;
+        margin: 0.0001%;
+    }
+
+    .btn {
+        background-color: #242d3c;
+        width: 60%;
+    }
+
+    .centralContent {
+        margin-top: 50%;
+    }
+
+    .max-width {
+        max-width: 930px;
+    }
+}
+
+
+
+
+@media (max-width: 500px) {
+    .h1home {
+        margin-top: 20%;
+        font-size: 20px;
+    }
+
+    .h3home {
+        font-size: 16px;
+    }
+}
+
+body {
+    background-color: #ddd;
+}
+
+.btn {
+    background-color: #7678FB;
+    border-radius: 6px;
+    border: 2px solid #7678FB;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
